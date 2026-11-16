@@ -1,5 +1,7 @@
+
+
 """
-URL configuration for proyecto4 project.
+URL configuration for u2_proyecto1 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.1/topics/http/urls/
@@ -17,6 +19,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from biblioteca.views import crear_libro,modificar_libro,eliminar_libro,listar_libro,listar_libros
+
 urlpatterns = [
+
+    # Libros
     path('admin/', admin.site.urls),
+    path('libro/crear',crear_libro),
+    path('libro/modificar/<int:id>', modificar_libro),
+    path('libro/eliminar/<int:id>', eliminar_libro),
+    path('libros', listar_libros),
+    path('libro/<int:id>', listar_libro),
 ]
+
